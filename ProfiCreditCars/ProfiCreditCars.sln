@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProfiCreditCars.Models", "ProfiCreditCars.Models\ProfiCreditCars.Models.csproj", "{0DC9471F-5B9D-4F83-A26D-8C499411A048}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProfiCreditCars.Data", "ProfiCreditCars.Data\ProfiCreditCars.Data.csproj", "{3770490D-3C29-47E0-9657-07C2F38280AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProfiCreditCars.Services", "ProfiCreditCars.Services\ProfiCreditCars.Services.csproj", "{8EDAE34F-07D5-44A0-B01B-3BB7553DE912}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{3770490D-3C29-47E0-9657-07C2F38280AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3770490D-3C29-47E0-9657-07C2F38280AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3770490D-3C29-47E0-9657-07C2F38280AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EDAE34F-07D5-44A0-B01B-3BB7553DE912}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EDAE34F-07D5-44A0-B01B-3BB7553DE912}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EDAE34F-07D5-44A0-B01B-3BB7553DE912}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EDAE34F-07D5-44A0-B01B-3BB7553DE912}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
