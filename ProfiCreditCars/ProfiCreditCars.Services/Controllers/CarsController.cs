@@ -21,7 +21,7 @@
         [HttpGet]
         public IHttpActionResult GetCars()
         {
-            var data = this.Data.Cars
+            var data = this.Data.Cars.All()
                 .Select(CarViewModel.Create);
 
             return this.Ok(data);
@@ -36,7 +36,7 @@
         [ResponseType(typeof(Car))]
         public IHttpActionResult GetCar(long id)
         {
-            var data = this.Data.Cars
+            var data = this.Data.Cars.All()
                 .Where(c => c.Id == id)
                 .Select(CarViewModel.Create)
                 .FirstOrDefault();
@@ -78,7 +78,7 @@
             this.Data.Cars.Add(car);
             this.Data.SaveChanges();
 
-            var data = this.Data.Cars
+            var data = this.Data.Cars.All()
                 .Where(c => c.Id == car.Id)
                 .Select(CarViewModel.Create)
                 .FirstOrDefault();
@@ -101,7 +101,7 @@
                 return this.NotFound();
             }
 
-            this.Data.Cars.Remove(car);
+            this.Data.Cars.Delete(car);
             this.Data.SaveChanges();
 
             return this.Ok(car);

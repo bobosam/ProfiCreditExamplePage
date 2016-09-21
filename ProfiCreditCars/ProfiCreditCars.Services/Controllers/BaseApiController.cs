@@ -10,15 +10,15 @@
     public class BaseApiController : ApiController
     {
         public BaseApiController()
-            : this(new ProfiCreditCarsContext())
+            : this(new ProfiCreditCarsData(new ProfiCreditCarsContext()))
         {
         }
 
-        public BaseApiController(ProfiCreditCarsContext data)
+        public BaseApiController(IProfiCreditCarsData data)
         {
             this.Data = data;
         }
 
-        public ProfiCreditCarsContext Data { get; set; }
+        public IProfiCreditCarsData Data { get; set; }
     }
 }
