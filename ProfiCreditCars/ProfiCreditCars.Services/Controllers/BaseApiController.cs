@@ -9,10 +9,10 @@
     /// </summary>
     public class BaseApiController : ApiController
     {
-        public BaseApiController()
-            : this(new ProfiCreditCarsData(new ProfiCreditCarsContext()))
-        {
-        }
+        //public BaseApiController()
+        //    : this(new ProfiCreditCarsData(new ProfiCreditCarsContext()))
+        //{
+        //}
 
         public BaseApiController(IProfiCreditCarsData data)
         {

@@ -7,12 +7,23 @@
 
     using ProfiCreditCars.Models;
     using ProfiCreditCars.Services.Models;
+    using Data;
 
     /// <summary>
     /// A RestController class where we define the endpoint URLs for the Car service. 
     /// </summary>
     public class CarsController : BaseApiController
     {
+        public CarsController()
+            : this(new ProfiCreditCarsData(new ProfiCreditCarsContext()))
+        {
+        }
+
+        public CarsController(IProfiCreditCarsData data)
+            :base(data)
+        {
+        }
+
         /// <summary>
         /// GET Serving the method
         /// </summary>
@@ -95,7 +106,7 @@
         [ResponseType(typeof(Car))]
         public IHttpActionResult DeleteCar(long id)
         {
-            Car car = this.Data.Cars.Find(id);
+            Car car = this.Data.Cars.All().FirstOrDefault(c => c.Id == id);
             if (car == null)
             {
                 return this.NotFound();
