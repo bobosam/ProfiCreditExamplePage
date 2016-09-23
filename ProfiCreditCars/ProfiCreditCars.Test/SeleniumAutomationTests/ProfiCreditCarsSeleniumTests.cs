@@ -1,15 +1,16 @@
 ﻿namespace ProfiCreditCars.Test.SeleniumAutomationTests
 {
     using System;
+    using System.Threading;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     using OpenQA.Selenium;
     using OpenQA.Selenium.Chrome;
-   
+      
     [TestClass]
     public class ProfiCreditCarsSeleniumTests
     {
-        private const string UrlString = "http://localhost:63342/carsjs/index.html";
+        private const string UrlString = "http://localhost:63342/carsjsFrontend/index.html";
         private IWebDriver driver;
 
         [TestInitialize]
@@ -32,6 +33,8 @@
             carPage.Color.SendKeys("red");
             carPage.AddButton.Click();
 
+            Thread.Sleep(2000);
+
             var message = carPage.Pre.GetAttribute("textContent");
 
             Assert.AreEqual(message, "success");
@@ -46,6 +49,8 @@
             carPage.Year.SendKeys("2010");
             carPage.Color.SendKeys("red");
             carPage.AddButton.Click();
+
+            Thread.Sleep(2000);
 
             var message = carPage.Pre.GetAttribute("textContent");
 
@@ -62,6 +67,8 @@
             carPage.Color.SendKeys("red");
             carPage.AddButton.Click();
 
+            Thread.Sleep(2000);
+
             var message = carPage.Pre.GetAttribute("textContent");
 
             Assert.AreEqual(message, "error");
@@ -76,6 +83,8 @@
             carPage.Year.SendKeys("2010");
             carPage.Color.SendKeys("red");
             carPage.AddButton.Click();
+
+            Thread.Sleep(2000);
 
             var message = carPage.Pre.GetAttribute("textContent");
 
@@ -92,6 +101,8 @@
             carPage.Color.SendKeys("red");
             carPage.AddButton.Click();
 
+            Thread.Sleep(2000);
+
             var message = carPage.Pre.GetAttribute("textContent");
 
             Assert.AreEqual(message, "error");
@@ -106,6 +117,8 @@
             carPage.Year.SendKeys("1767");
             carPage.Color.SendKeys("red");
             carPage.AddButton.Click();
+
+            Thread.Sleep(2000);
 
             var message = carPage.Pre.GetAttribute("textContent");
 
@@ -122,6 +135,8 @@
             carPage.Color.SendKeys("<script>alert(1)</script>");
             carPage.AddButton.Click();
 
+            Thread.Sleep(2000);
+
             var message = carPage.Pre.GetAttribute("textContent");
 
             Assert.AreEqual(message, "success");
@@ -137,6 +152,8 @@
             carPage.Color.SendKeys("r");
             carPage.AddButton.Click();
 
+            Thread.Sleep(2000);
+
             var message = carPage.Pre.GetAttribute("textContent");
 
             Assert.AreEqual(message, "error");
@@ -151,6 +168,8 @@
             carPage.Year.SendKeys("2010");
             carPage.Color.SendKeys("Bbbbbbbbbbbbbbbbbbbbbbbbbb");
             carPage.AddButton.Click();
+
+            Thread.Sleep(2000);
 
             var message = carPage.Pre.GetAttribute("textContent");
 
